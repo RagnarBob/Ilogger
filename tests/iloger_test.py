@@ -5,8 +5,8 @@ from random import randint
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(root_path)
 
-from iloger import log, get_logs
-from iloger import level
+from ipyllogger import log, get_logs
+from ipyllogger import level
 
 error_logs = []
 Warning_logs = []
@@ -34,7 +34,7 @@ for logentry in get_logs(level.WARNING):
             (logentry, level.WARNING)
         )
     
-os.remove(f"{root_path}/logs/{level.ERROR_LEVEL_FILE}")
-os.remove(f"{root_path}/logs/{level.WARNING_LEVEL_FILE}")
-    
+os.remove(f"{root_path}/logs/error.log")
+os.remove(f"{root_path}/logs/warning.log")
+os.rmdir(f"{root_path}/logs")
 print("ALL TESTS PASSED")
