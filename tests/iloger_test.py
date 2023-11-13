@@ -34,5 +34,7 @@ for logentry in get_logs(level.WARNING):
             (logentry, level.WARNING)
         )
     
-os.remove(f"{root_path}/logs")
+os.remove(f"{root_path}/logs/error.log")
+os.remove(f"{root_path}/logs/warning.log")
+os.rmdir(f"{root_path}/logs")
 print("ALL TESTS PASSED")

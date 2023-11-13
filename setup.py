@@ -1,6 +1,6 @@
 import setuptools
 
-with open("README.rst", "r") as f:
+with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
@@ -12,7 +12,7 @@ setuptools.setup(
     maintainer="Louis Midson LAJEANTY",
     maintainer_email="mds@louismidson.me",
 	long_description=long_description,
-	long_description_content_type='text/x_rst',
+	long_description_content_type='text/markdown',
 	url="https://github.com/RagnarBob/Ilogger",
 	packages=setuptools.find_packages(),
 	classifiers=[
