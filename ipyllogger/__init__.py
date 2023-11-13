@@ -1,7 +1,7 @@
 from typing import Literal
 
-from iloger.level import *
-from iloger.logger import *
+from ipyllogger.level import *
+from ipyllogger.logger import *
 
 from datetime import datetime
 
