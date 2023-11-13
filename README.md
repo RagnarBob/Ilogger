@@ -39,3 +39,6 @@ print(get_logs(level.WARNING))
 ## Contributors
 - [Makendy ALEXIS](https://github.com/RagnarBob)
 - [Louis Midson LAJEANTY](https://github.com/midsonlajeanty)
+
+## Project Director
+- [Lub Lorry Lamisère](https://github.com/lemayzeur)
