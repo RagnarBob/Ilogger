@@ -1,29 +1,32 @@
 import os
 
-base_path = 'logs'
 
-def create_dir_if_not_exist(path:str) -> None:
-    if not os.path.exists(path):
-        os.makedirs(path)
+class AbstractLogger():
 
-def write_log(filename:str, content:str, reset:bool) -> None:
-    mode = 'w' if reset else 'a'
+    base_path = 'logs'
 
-    create_dir_if_not_exist(base_path)
+    def __create_dir_if_not_exist(self, path:str) -> None:
+        if not os.path.exists(path):
+            os.makedirs(path)
 
-    with open(f"{base_path}/{filename}", mode) as f:
-        f.write(content)
+    def _write_log(self, filename:str, content:str, reset:bool) -> None:
+        mode = 'w' if reset else 'a'
 
-def read_logs(filename:str) -> list[str]:
-    try:
-        with open(f"{base_path}/{filename}") as f:
-            return f.readlines()
-    except FileNotFoundError:
+        self.__create_dir_if_not_exist(self.base_path)
 
-        create_dir_if_not_exist(base_path)
+        with open(f"{self.base_path}/{filename}", mode) as f:
+            f.write(content)
 
-        f = open(f"{base_path}/{filename}", 'w')
-        f.close()
-        return []
+    def _read_logs(self, filename:str) -> list[str]:
+        try:
+            with open(f"{self.base_path}/{filename}") as f:
+                return f.readlines()
+        except FileNotFoundError:
+
+            self.__create_dir_if_not_exist(self.base_path)
+
+            f = open(f"{self.base_path}/{filename}", 'w')
+            f.close()
+            return []
         
 

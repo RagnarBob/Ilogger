@@ -1,7 +1,7 @@
 
 test:
 	@echo "Running tests..."
-	@python3 tests/iloger_test.py
+	@python3 tests/ipyllogger_test.py
 
 .PHONY: test
 
