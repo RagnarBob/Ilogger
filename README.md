@@ -16,20 +16,22 @@ make test
 ## Usage
 
 ```python
-from ipyllogger import log, get_logs
+from ipyllogger import Logger
 from ipyllogger import level
 
+logger = Logger()
+
 # Log an error
-log("Hello World", level.ERROR)
+logger.log("Hello World", level.ERROR)
 
 # Log a warning
-log("Hello World", level.WARNING)
+logger.log("Hello World", level.WARNING)
 
 # Get all errors logs
-print(get_logs(level.ERROR))
+print(logger.get_logs(level.ERROR))
 
 # Get all warnings logs
-print(get_logs(level.WARNING))
+print(logger.get_logs(level.WARNING))
 
 ```
 
